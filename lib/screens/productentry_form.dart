@@ -11,8 +11,9 @@ class ProductEntryFormPage extends StatefulWidget {
 class _ProductEntryFormPageState extends State<ProductEntryFormPage> {
   final _formKey = GlobalKey<FormState>();
   String _name = "";
+  int _amount = 0;
 	String _description = "";
-	int _amount = 0;
+	int _stars = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -117,6 +118,35 @@ class _ProductEntryFormPageState extends State<ProductEntryFormPage> {
                   },
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Center(
+                      child: Text(
+                        "Stars",
+                        style: TextStyle(
+                          fontSize: 16.0,
+                        ),
+                      ),
+                    ),
+                    Slider(
+                      value: _stars.toDouble(),
+                      min: 0,
+                      max: 5,
+                      divisions: 5, // Memberikan titik jeda pada setiap nilai
+                      label: _stars.toString(),
+                      onChanged: (double value) {
+                        setState(() {
+                          _stars = value.toInt();
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
+
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
@@ -132,14 +162,14 @@ class _ProductEntryFormPageState extends State<ProductEntryFormPage> {
                           context: context,
                           builder: (context) {
                             return AlertDialog(
-                              title: const Text('Product berhasil tersimpan'),
+                              title: Text('$_name is now on sale!', textAlign: TextAlign.center),
                               content: SingleChildScrollView(
                                 child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Text('Product Name: $_name'),
-                                    Text('Amount: $_amount'),
-                                    Text('Description: $_description'),
+                                    Text('This is the description: $_description', textAlign: TextAlign.center),
+                                    Text('Stocks are $_amount left.', textAlign: TextAlign.center),
+                                    Text('$_stars stars are given for this product.', textAlign: TextAlign.center),
                                   ],
                                 ),
                               ),
