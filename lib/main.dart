@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:words_of_affirmachine/menu.dart';
+import 'package:words_of_affirmachine/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Words of Affir-MACHINE',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.red[100],
         colorScheme: ColorScheme.fromSwatch(
