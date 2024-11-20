@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:words_of_affirmachine/widgets/left_drawer.dart';
-import 'package:words_of_affirmachine/widgets/product_cart.dart';
+import 'package:words_of_affirmachine/widgets/product_card.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
