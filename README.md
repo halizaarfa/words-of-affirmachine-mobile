@@ -101,3 +101,13 @@ Library `http` digunakan untuk melakukan request seperti `GET`, `POST`, ataupun 
 - Flutter mengirim request logout ke Django
 - Django menghapus cookie dari sesi tersebut dan mengirim respons sukses
 - Flutter membersihkan instance CookieRequest untuk mengakhiri sesi, pengguna pun kembali ke laman login dan tidak bisa mengakses laman lainnya sampai login kembali
+
+## Implementasi checklist
+- Start app authentication baru pada project Django
+- Menambahkan INSTALLED_APPS dan konfigurasi settings.py lainnya
+- Membuat function login, register, dan logout pada views.py authentication
+- Membuat page login dan register pada aplikasi Flutter
+- Menambahkan CookieRequest pada setiap page aplikasi
+- Menyocokkan url agar bisa mengirim HTTP request dengan benar
+- Membuat model dari JSON data Django
+- Membuat page list Product dan page detail Product
